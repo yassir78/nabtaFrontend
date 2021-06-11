@@ -1,0 +1,98 @@
+<!-- <div class="container">
+  
+
+</div> -->
+<div class="row text-left justify-content-md-center ">
+  <div class="col-md-8 ">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title" id="from-actions-top-bottom-center">Add Disease</h4>
+
+        <div class="card-content">
+          <div class="px-3">
+            <form class="form" [formGroup]="form" (ngSubmit)="submit()">
+              <div class="form-body">
+                <div class="row">
+                  <label for="nomScientifique">Images </label>
+                  <div class="form-group col-12 mb-2">
+
+                    <input type="file" class="form-control-file my-2" (change)="onChangeMultiple($event)"
+                      id="exampleFormControlFile2" multiple>
+                    <div class="d-flex justify-content-center flex-wrap" #image></div>
+                    <mat-progress-bar mode="determinate" [value]="(progress$|async)" *ngIf="file"> </mat-progress-bar>
+                  </div>
+
+                </div>
+                <div class="row">
+                  <label for="nomScientifique">Cycle image </label>
+                  <div class="form-group col-12 mb-2">
+
+                    <img [src]="imageUrl" alt="..." class="img-thumbnail" height="200" width="200">
+                    <input type="file" class="form-control-file my-2" (change)="onChange($event)"
+                      id="exampleFormControlFile1">
+                    <mat-progress-bar mode="determinate" [value]="(progress$|async)" *ngIf="file"> </mat-progress-bar>
+                  </div>
+
+                </div>
+                <div class="row">
+                  <div class="form-group col-12 mb-2">
+                    <label for="nom">Nom</label>
+                    <input type="text" id="nom" class="form-control" formControlName="nom" placeholder="nom" name="nom">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-12 mb-2">
+                    <label for="nomScientifique">Nom Scientifique</label>
+                    <input type="text" id="nomScientifique" class="form-control" formControlName="nomScientifique"
+                      placeholder="Nom Scientifique" name="nomScientifique">
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="form-group col-12 mb-2">
+                    <label for="nomScientifique">Symptoms</label>
+                    <ckeditor [editor]="Editor" [data]="symptoms" (change)="onChangeSymptoms($event)"></ckeditor>
+                  </div>
+
+                </div>
+                <div class="row">
+                  <div class="form-group col-12 mb-2">
+                    <label for="nomScientifique">Conditions</label>
+                    <ckeditor [editor]="Editor" [data]="conditions" (change)="onChangeConditions($event)"></ckeditor>
+                  </div>
+
+                </div>
+                <div class="row">
+                  <div class="form-group col-12 mb-2">
+                    <label for="nomScientifique">Management </label>
+                    <ckeditor [editor]="Editor" [data]="management" (change)="onChangeManagement($event)"></ckeditor>
+                  </div>
+
+                </div>
+                <div class="row">
+                  <div class="form-group col-12 mb-2">
+                    <label for="nomScientifique">control </label>
+                    <ckeditor [editor]="Editor" [data]="control" (change)="onChangeControl($event)"></ckeditor>
+                  </div>
+
+                </div>
+
+
+
+
+              </div>
+
+              <div class="form-actions center">
+
+                <button type="submit" class="btn btn-raised btn-primary" [disabled]="form.invalid">
+                  <i class="fa fa-check-square-o"></i> Save
+                </button>
+
+
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

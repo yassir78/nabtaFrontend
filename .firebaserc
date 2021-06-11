@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "nabta-38d6a": {
+      "hosting": {
+        "dayliv-admin": [
+          "nabta-38d6a"
+        ]
+      }
+    }
+  }
+}

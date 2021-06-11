@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "dayliv-admin",
+      "public": "dist/dayliv-admin",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}
